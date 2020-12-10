@@ -1,16 +1,9 @@
 <%= render "shared/header" %>
 
+
 <div class="main">
   <div class="side-bar">
-    <div class="rooms">
-    <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <a href="#"><%= room.name %></a>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <%= render "messages/side_bar" %>
   </div>
   <div class="main-task-chat">
     <ul class="tasks">
@@ -25,6 +18,7 @@
         </div>
      </li>
     </ul>
+  
   </div>
 </div>
 <%= render "shared/footer" %>

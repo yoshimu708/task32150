@@ -1,0 +1,43 @@
+ <%= render "shared/header" %>
+
+
+
+<div class="main">
+   <div class="side-bar">
+    <%= render "messages/side_bar" %>
+  </div>
+
+
+  <div class="main-task-chat">
+   <div class="chat-header">
+  <div class="left-header">
+   <div class="header-title">
+      <%= @room.name %>
+  </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+    </div>
+  </div>
+</div>
+  <div>
+  <%= render "shared/main_chat" %>
+  </div>
+    <ul class="tasks">
+     <li>
+        <div class="task-info">
+          <div class="task-title">
+          </div>
+          <div class="task-text">
+          </div>          
+          <div class="task-time">
+          </div>
+        </div>
+     </li>
+    </ul>
+  
+  </div>
+</div>
+
+<%= render "shared/footer" %>
