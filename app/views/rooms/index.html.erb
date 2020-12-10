@@ -6,7 +6,7 @@
     <% current_user.rooms.each do |room| %>
     <div class="room">
       <div class="room-name">
-        <a href="#"><%= room.name %></a>
+        <%= link_to room.name, room_messages_path(room) %>
       </div>
     </div>
   <% end %>
@@ -25,6 +25,16 @@
         </div>
      </li>
     </ul>
+  <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
   </div>
 </div>
 <%= render "shared/footer" %>
