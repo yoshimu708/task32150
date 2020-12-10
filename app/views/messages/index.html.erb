@@ -3,17 +3,10 @@
 
 
 <div class="main">
-  <div class="side-bar">
-    <div class="rooms">
-    <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <%= link_to room.name, room_messages_path(room) %>
-      </div>
-    </div>
-  <% end %>
+   <div class="side-bar">
+    <%= render "messages/side_bar" %>
   </div>
-  </div>
+
 
   <div class="main-task-chat">
    <div class="chat-header">
@@ -24,7 +17,7 @@
   </div>
   <div class="right-header">
     <div class="header-button">
-      <a href="#">チャットを終了する</a>
+      <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
     </div>
   </div>
 </div>

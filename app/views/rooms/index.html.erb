@@ -3,15 +3,7 @@
 
 <div class="main">
   <div class="side-bar">
-    <div class="rooms">
-    <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <%= link_to room.name, room_messages_path(room) %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <%= render "messages/side_bar" %>
   </div>
   <div class="main-task-chat">
     <ul class="tasks">
