@@ -1,0 +1,35 @@
+ <div class="header-title">
+      <%= @room.name %>
+    </div>
+
+
+
+<div class="message">
+  <div class="upper-message">
+    <div class="message-user">
+      <!-- 投稿したユーザー名情報を出力する -->
+      <%= message.user.name %>
+    </div>
+    <div class="message-date">
+      <!-- 投稿した時刻を出力する -->
+      <%= message.created_at %>
+    </div>
+  </div>
+  <div class="lower-message">
+    <div class="message-content">
+      <!-- 投稿したメッセージ内容を記述する -->
+      <%= message.content %>
+    </div>
+  </div>
+</div>
+
+<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
+  <div class="form-input">
+    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: 'hidden' %>
+    </label>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
