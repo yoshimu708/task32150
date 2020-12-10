@@ -1,0 +1,12 @@
+.footer{
+  background-color: burlywood;
+  width: 100vw;
+}
+.footer-logo{
+  text-align: center;
+}
+.footer-menus{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}

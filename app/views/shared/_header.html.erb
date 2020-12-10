@@ -1,0 +1,23 @@
+<div class="header">
+ <div class="header-logo">
+   TaskIsEasy
+  </div>
+  <div class="header-user-menu">
+   <% if user_signed_in? %>
+    <div class="user-menus">
+    <ul class="menus">
+    <li><li class="menu"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></li>
+    <li><li class="menu"><%= link_to "new room", new_room_path, class: "link" %></li>
+    <li><li class="menu"><%= link_to current_user.nickname, edit_user_path(current_user),class:"link" %></li>
+    </ul>
+    </div>
+   <% else %>
+    <div class="user-menus">
+    <ul class="menus">
+    <li class="menu"><%= link_to "ログイン", new_user_session_path, class: "link" %></li>
+    <li class="menu"><%= link_to "新規登録", new_user_registration_path, class: "link" %></li>
+    </ul>
+    </div>
+   <% end %>
+  </div>
+</div>
