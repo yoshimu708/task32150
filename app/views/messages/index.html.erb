@@ -1,35 +1,50 @@
- <div class="header-title">
-      <%= @room.name %>
-    </div>
+ <%= render "shared/header" %>
 
 
 
-<div class="message">
-  <div class="upper-message">
-    <div class="message-user">
-      <!-- 投稿したユーザー名情報を出力する -->
-      <%= message.user.name %>
+<div class="main">
+  <div class="side-bar">
+    <div class="rooms">
+    <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <%= link_to room.name, room_messages_path(room) %>
+      </div>
     </div>
-    <div class="message-date">
-      <!-- 投稿した時刻を出力する -->
-      <%= l message.created_at %>
-    </div>
+  <% end %>
   </div>
-  <div class="lower-message">
-    <div class="message-content">
-      <!-- 投稿したメッセージ内容を記述する -->
-      <%= message.content %>
+  </div>
+
+  <div class="main-task-chat">
+   <div class="chat-header">
+  <div class="left-header">
+   <div class="header-title">
+      <%= @room.name %>
+  </div>
+  </div>
+  <div class="right-header">
+    <div class="header-button">
+      <a href="#">チャットを終了する</a>
     </div>
   </div>
 </div>
-
-<%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
-  <div class="form-input">
-    <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
-    <label class="form-image">
-      <span class="image-file">画像</span>
-      <%= f.file_field :image, class: 'hidden' %>
-    </label>
+  <div>
+  <%= render "shared/main_chat" %>
   </div>
-  <%= f.submit '送信', class: 'form-submit' %>
-<% end %>
+    <ul class="tasks">
+     <li>
+        <div class="task-info">
+          <div class="task-title">
+          </div>
+          <div class="task-text">
+          </div>          
+          <div class="task-time">
+          </div>
+        </div>
+     </li>
+    </ul>
+  
+  </div>
+</div>
+
+<%= render "shared/footer" %>
