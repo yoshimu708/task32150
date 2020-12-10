@@ -3,7 +3,7 @@
         <% if user_signed_in? %>
           <div class="user_nav grid-6">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%#= link_to "投稿する", new_tweet_path, class: "post" %>
+            <%= link_to "new room", new_room_path, class: "post" %>
             <%= link_to current_user.nickname, edit_user_path(current_user) %>
 
           </div>
@@ -14,3 +14,13 @@
           </div>
         <% end %>
       </div>
+
+      <div class="rooms">
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <a href="#"><%= room.name %></a>
+      </div>
+    </div>
+  <% end %>
+</div>
