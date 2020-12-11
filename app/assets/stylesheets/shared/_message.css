@@ -11,9 +11,15 @@
   border:1px solid black;
   display: flex;
   height:5%;
+  width:100%;
   margin-bottom:5px;
   margin-top:10px;
   background-color: lavender;
+  
+}
+
+.message-upp{
+  border-right: 1px solid black;
 }
 .message-user{
   border:1px solid black;
@@ -21,16 +27,28 @@
   padding:5px;
   border-radius: 50%;
   margin-left:5px;
-}
-.message-content{
-  border-bottom:1px solid black;
-  font-size: 15px;
-  margin-left:5px;
-  width:80%;
-  border-bottom:1px solid black;
-  padding:5px 1px 5px 5px;
+  margin-right:5px;
+  text-align: center;
 }
 .message-date{
   font-size: 5px;
-  padding-top: 15px;
+  border:1px solid black;
+}
+
+.message-down{
+  border: 1px  solid black;
+  width:90%;
+  margin-left: 10px;
+}
+
+.message-content{
+  font-size: 15px;
+  margin-left:5px;
+  width:80%;
+  padding:5px 1px 5px 5px;
+}
+
+.message-image{
+  border: 1px  solid black;
+  
 }
