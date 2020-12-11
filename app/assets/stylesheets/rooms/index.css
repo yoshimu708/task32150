@@ -221,3 +221,7 @@
   flex-direction: column;
   list-style: none;
 }
+
+.field_with_errors {
+  display: contents;
+}
