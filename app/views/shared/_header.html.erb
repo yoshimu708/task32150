@@ -1,15 +1,21 @@
 <div class="header">
+
  <div class="header-logo">
-   TaskIsEasy
-  </div>
+  <div class="header-logo-potion">
+    <h2>
+    <%= link_to "TaskIsEasy", "/" %></li>
+    </h2>
+   </div>
+</div>
+
   <div class="header-user-menu">
    <% if user_signed_in? %>
     <div class="user-menus">
     <ul class="menus">
 
-    <li><li class="menu"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></li>
-    <li><li class="menu"><%= link_to "new room", new_room_path, class: "link" %></li>
-    <li><li class="menu"><%= link_to current_user.nickname, edit_user_path(current_user),class:"link" %></li>
+    <li class="menu"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></li>
+    <li class="menu"><%= link_to "new room", new_room_path, class: "link" %></li>
+    <li class="menu"><%= link_to current_user.nickname, edit_user_path(current_user),class:"link" %></li>
     </ul>
     </div>
    <% else %>
@@ -21,4 +27,5 @@
     </div>
    <% end %>
   </div>
+  
 </div>

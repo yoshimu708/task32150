@@ -1,0 +1,36 @@
+.message-group{
+  border:1px solid black;
+  width:90%;
+  height: 68vh;
+  margin-top:10px;
+  margin-left:5%;
+}
+
+
+.message-info{
+  border:1px solid black;
+  display: flex;
+  height:5%;
+  margin-bottom:5px;
+  margin-top:10px;
+  background-color: lavender;
+}
+.message-user{
+  border:1px solid black;
+  font-size:12px;
+  padding:5px;
+  border-radius: 50%;
+  margin-left:5px;
+}
+.message-content{
+  border-bottom:1px solid black;
+  font-size: 15px;
+  margin-left:5px;
+  width:80%;
+  border-bottom:1px solid black;
+  padding:5px 1px 5px 5px;
+}
+.message-date{
+  font-size: 5px;
+  padding-top: 15px;
+}

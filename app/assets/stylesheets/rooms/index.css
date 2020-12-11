@@ -1,31 +1,222 @@
-.main{
-  display: flex;
+.page{
+  background-color: white;
   width: 100vw;
+  height: 100vh;
 }
+
+.main{
+  border:1px solid black;
+  display: flex;
+  width: 99vw;
+  height:88vh;
+}
+
 .side-bar{
   width: 20%;
-  height: 80vh;
-  background-color: darkgray;
+  height: 88vh;
 }
+
+.side-bar-title{
+  background-color: lightsteelblue;
+  border:1px solid black;
+  width: 100%;
+  height: 5vh;
+}
+
+.side-bar-text{
+  text-align: center;
+  margin:10px;
+}
+
+.side-bar-main{
+  border:1px solid black;
+  background-color: #DDDDDD;
+  margin-top:10px;
+  height: 93%;
+  padding:5px;
+}
+
+.rooms{
+  height:95%;
+}
+.room{
+  border:1px solid black;
+  border-radius: 5%;
+  margin-top: 10px;
+  text-align: center;
+  position:relative;
+  width:100%;
+  height:4%
+}
+.room-name{
+  text-decoration: none;
+  border:1px solid black;
+  color:black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width: 100%;
+}
+
 .main-task-chat{
   width: 80%;
-  height: 80vh;
-  background-color: lightsteelblue;
+  height: 88vh;
+  border:1px solid black;
+  margin-left:10px;
+}
+.task-chat{
+  border:1px solid black;
+  width: 100%;
+  height: 100%;
+}
+
+.main-title{
+  border:1px solid black;
+  width:80%;
+  height:15%;
+  margin:5% 10%;
+}
+
+.main-title h2{
+  border:1px solid black;
+  height:60%;
+  margin-top:0;
+  font-size:50px;
+  text-align: center;
+  margin-bottom:15px;
+}
+
+.create-btn{
+  margin-top:0;
+  width:30%;
+  height:30%;
+  margin-left:35%;
+}
+
+.my-tasks{
+  border:1px solid black;
+  width:90%;
+  height:70%;
+  margin:0 auto;
+}
+
+.task-bar{
+  border:1px solid black;
+  width:100%;
+  height:8%;
+}
+.task-bar-info{
+  display: flex;
+  list-style:none;
+  margin-top:5px;
+  margin-left:8%;
+}
+
+.tasks{
+  border:1px solid black;
+  width:100%;
+  height:90%;
+}
+.task{
+  border:1px solid black;
+  width:100%;
+  height:10%;
+  margin-bottom:10px;
 }
 .task-info{
   display: flex;
+  list-style:none;
+  margin-top:5px;
 }
-.task-text{
-  padding-left: 10px;
+.task-status{
+  border:1px solid black;
+  height:40px;
+  width:15%;
 }
+
 .task-time{
-  padding-left: 10px;;
+  border:1px solid black;
+  height:40px;
+  width:15%;
+  margin-left: 5px;
 }
-.task-info{
-  list-style: none;
+.task-title{
+  border:1px solid black;
+  height:40px;
+  width:40%;
+  margin-left: 5px;
+
 }
+.task-management{
+  border:1px solid black;
+  width:25%;
+  margin-left: 5px;
+
+}
+
+
+
+
+
 
 
 .field_with_errors {
   display: contents;
+}
+.form {
+  background-color: #DDDDDD;
+  height: 90px;
+  padding: 20px 40px;
+  display: flex;
+}
+
+.form-input {
+  background-color: white;
+  display: flex;
+  width: 100%;
+}
+
+.form-message {
+  border: none;
+  height: 50px;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.form-submit {
+  background-color: #38AEF0;
+  border: none;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+.form-image {
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.footer{
+  background-color: burlywood;
+  width: 100vw;
+}
+.footer-logo{
+  text-align: center;
+}
+.footer-menus{
+  display: flex;
+  flex-direction: column;
+  list-style: none;
 }
