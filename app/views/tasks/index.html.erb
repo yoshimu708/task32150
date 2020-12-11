@@ -1,8 +1,90 @@
+<div class="page">
+<%= render "shared/header" %>
+
+
+<div class="main">
+  <div class="side-bar">
+  <div class="side-bar-title">
+  <h4 class="side-bar-text">ROOM</h4>
+  </div>
+
+  <div class="side-bar-main">
+    <%= render "messages/side_bar" %>
+  </div>
+  </div>
+
+
+  <div class="main-task-chat">
+  <div class="task-chat">
+  <div class="main-title">
+  <h2> WE TASK LIST</h2>
+  <input type="sumbmit" class="create-btn">
+  </div>
+
+
+  <div class="my-tasks">
+  <div class="task-bar">
+       <div class="task-bar-info">
+          <div class="task-status">
+          status
+          </div>
+          <div class="task-time">
+          limit
+          </div>          
+          <div class="task-title">
+          title
+          </div>
+          <div class="task-management">
+          manegement
+          </div>
+        </div>
+  </div>
+<ul class="tasks">
+      <% @tasks.each do |task| %>
+      
+     <li class="task">
+        <div class="task-info">
+          <div class="task-status">
+          <%= task.status%>
+          </div>
+          <div class="task-time">
+          <%= task.limit%>
+          </div>          
+          <div class="task-title">
+          <%= task.task_name%>
+          </div>
+          <div class="task-management">
+          </div>
+        </div>
+     </li>
+
+<%end%>
+</ul>
+    <div>
+
+
+    </div>
+  </div> 
+  </div>
+  </div>
+</div>
+</div>
+
+
 <%= form_with model: [@room, @task], class: 'task-form', local: true do |f| %>
   <div class="form-input">
+    <div>
     <%= f.text_field :task_name, class: 'form-task-name', placeholder: 'type a task name' %>
-   <%=f.text :status, class:'form-status'%>
-   <%=f.text :limit, class:'form-limit'%>
+    <%= f.label :task_name %>
+    </div>
+    <div>
+    <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
+    <%= f.label :state %>
+    </div>
+    <div>
+   <%=f.date_field  :limit, class:'form-limit'%>
+          <%= f.label :limit_date %>
+   </div>
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>
