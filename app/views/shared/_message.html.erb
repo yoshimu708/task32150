@@ -1,12 +1,22 @@
 <div class="message-info">
+    <div class="message-upp">
     <div class="message-user">
       <%= message.user.nickname %>
-    </div>
-    <div class="message-content">
-      <%= message.content %>
     </div>
     <div class="message-date">
        <%= l message.created_at %>
     </div>
-    <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+    </div>
+
+    <div class="message-down">
+
+    <div class="message-content">
+      <%= message.content %>
+    </div>
+    <div class="message-image">
+      <%= image_tag message.image.variant(resize: '200x200'), class: 'message-image' if message.image.attached? %>
+    </div>
+
+    </div>
+    
   </div>

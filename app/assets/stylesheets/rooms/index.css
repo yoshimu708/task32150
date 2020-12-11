@@ -38,6 +38,7 @@
 
 .rooms{
   height:95%;
+  overflow: scroll;
 }
 .room{
   border:1px solid black;
