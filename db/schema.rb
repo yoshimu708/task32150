@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_11_063321) do
+ActiveRecord::Schema.define(version: 2020_12_11_085417) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 2020_12_11_063321) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "task_name"
+    t.string "status"
+    t.string "limit"
+    t.bigint "room_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_tasks_on_room_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -76,4 +88,6 @@ ActiveRecord::Schema.define(version: 2020_12_11_063321) do
   add_foreign_key "messages", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
+  add_foreign_key "tasks", "rooms"
+  add_foreign_key "tasks", "users"
 end
