@@ -1,24 +1,49 @@
 .header{
-  width: 100vw;
-  display: flex;
+  margin: 5px 5px 15px 5px;
+  border: 1px solid black;
+  padding:10px;
+  width: 98vw;
+  height: 10vh;
   background-color: cadetblue;
+  display: flex;
 }
 .header-logo{
-  padding: 20px;
+  border: 1px solid black;
+  width:25vw;
+  height:8vh;
+  padding:5px;
+}
+.header-logo-potion{
+  margin: 0 1vw ;
+  width:23vw;
+  height:7vh;
+}
+
+.header-user-menu{
+  width:70vw;
+  height:8vh;
+  margin-left: 10px;
+}
+.user-menus{
+  margin-top:33px;
+  margin-bottom:0;
 }
 .menus{
   list-style: none;
   display: flex;
+  margin-left:10px;
+  width:67vw;
 }
 .menu{
   padding: 5px 10px;
   text-decoration:none;
+  margin-left:3px;
 }
 .link{
+  border-radius: 8%;
+  border: 1px solid black;
+  padding:10px;
   text-decoration: none;
   font-size: 15px;
   color: black;
-  border: 1px solid black;
-  padding:5px;
 }
-

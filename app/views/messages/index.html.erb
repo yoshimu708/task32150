@@ -1,43 +1,53 @@
  <%= render "shared/header" %>
 
 
-
 <div class="main">
    <div class="side-bar">
+  <div class="side-bar-title">
+  <h4 class="side-bar-text">ROOM</h4>
+  </div>
+  <div class="side-bar-main">
     <%= render "messages/side_bar" %>
   </div>
+  </div>
+
+
+
 
 
   <div class="main-task-chat">
-   <div class="chat-header">
-  <div class="left-header">
-   <div class="header-title">
+  <div class="task-chat">
+
+
+<div class="chat-header">
+   <div class="left-header">
+   <div class="task-chat-room-name">
       <%= @room.name %>
-  </div>
-  </div>
-  <div class="right-header">
-    <div class="header-button">
-      <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+      </div>
     </div>
+  <div class="right-header">
+      <%= link_to "ROOM DELETE", room_path(@room), method: :delete,class:"room-delete" %>
   </div>
-</div>
-  <div>
+  </div>
+
+   <div class="task-chat-selector">
+   <div class="task-selector">
+   task
+   </div>
+   <div class="chat-selector">
+   chat
+   </div>
+   </div>
+
+   
+  <div class="messages-position">
   <%= render "shared/main_chat" %>
   </div>
-    <ul class="tasks">
-     <li>
-        <div class="task-info">
-          <div class="task-title">
-          </div>
-          <div class="task-text">
-          </div>          
-          <div class="task-time">
-          </div>
-        </div>
-     </li>
-    </ul>
   
-  </div>
-</div>
 
-<%= render "shared/footer" %>
+
+
+  </div>
+  </div>
+
+</div>

@@ -1,24 +1,61 @@
+<div class="page">
 <%= render "shared/header" %>
 
 
 <div class="main">
   <div class="side-bar">
+  <div class="side-bar-title">
+  <h4 class="side-bar-text">ROOM</h4>
+  </div>
+
+  <div class="side-bar-main">
     <%= render "messages/side_bar" %>
   </div>
+  </div>
+
+
   <div class="main-task-chat">
+  <div class="task-chat">
+  <div class="main-title">
+  <h2> YOUR TASK LIST</h2>
+  <input type="sumbmit" class="create-btn">
+  </div>
+
+
+  <div class="my-tasks">
+  <div class="task-bar">
+       <div class="task-bar-info">
+          <div class="task-status">
+          status
+          </div>
+          <div class="task-time">
+          limit
+          </div>          
+          <div class="task-title">
+          title
+          </div>
+          <div class="task-management">
+          manegement
+          </div>
+        </div>
+  </div>
     <ul class="tasks">
-     <li>
+     <li class="task">
         <div class="task-info">
+          <div class="task-status">
+          </div>
+          <div class="task-time">
+          </div>          
           <div class="task-title">
           </div>
-          <div class="task-text">
-          </div>          
-          <div class="task-time">
+          <div class="task-management">
           </div>
         </div>
      </li>
     </ul>
-  
+    
+  </div> 
+  </div>
   </div>
 </div>
-<%= render "shared/footer" %>
+</div>

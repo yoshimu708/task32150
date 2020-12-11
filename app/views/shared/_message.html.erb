@@ -1,16 +1,11 @@
-<div class="message">
-  <div class="upper-message">
+<div class="message-info">
     <div class="message-user">
       <%= message.user.nickname %>
+    </div>
+    <div class="message-content">
+      <%= message.content %>
     </div>
     <div class="message-date">
        <%= l message.created_at %>
     </div>
-    </div>
   </div>
-  <div class="lower-message">
-    <div class="message-content">
-      <%= message.content %>
-    </div>
-  </div>
-</div>
