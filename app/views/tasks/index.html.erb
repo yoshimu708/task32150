@@ -15,11 +15,35 @@
 
 
   <div class="main-task-chat">
-  <div class="task-chat">
-  <div class="main-title">
+   <div class="task-chat">
+    <div class="main-title">
   <h2> <%=@room.name%> TASK LIST</h2>
-  <input type="sumbmit" class="create-btn">
+    <div class="create-btn" id="task-create-btn">
+    new task
+    </div>
   </div>
+
+  <div id="new-task-create" >
+  <div class="modal">
+<%= form_with model: [@room, @task], class: 'task-form', local: true do |f| %>
+  <div class="form-input">
+    <div>
+    <%= f.text_field :task_name, class: 'form-task-name', placeholder: 'type a task name' %>
+    <%= f.label :task_name %>
+    </div>
+    <div>
+    <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
+    <%= f.label :state %>
+    </div>
+    <div>
+   <%=f.date_field  :limit, class:'form-limit'%>
+          <%= f.label :limit_date %>
+   </div>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+</div>
+</div>
 
 
   <div class="my-tasks">
@@ -70,21 +94,3 @@
 </div>
 </div>
 
-
-<%= form_with model: [@room, @task], class: 'task-form', local: true do |f| %>
-  <div class="form-input">
-    <div>
-    <%= f.text_field :task_name, class: 'form-task-name', placeholder: 'type a task name' %>
-    <%= f.label :task_name %>
-    </div>
-    <div>
-    <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
-    <%= f.label :state %>
-    </div>
-    <div>
-   <%=f.date_field  :limit, class:'form-limit'%>
-          <%= f.label :limit_date %>
-   </div>
-  </div>
-  <%= f.submit '送信', class: 'form-submit' %>
-<% end %>

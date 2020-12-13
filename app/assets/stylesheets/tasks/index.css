@@ -1,0 +1,36 @@
+
+.create-btn{
+  margin-top:0;
+  width:30%;
+  height:20%;
+  margin-left:35%;
+  cursor: pointer;
+  display: block;
+  border:1px solid black;
+  text-align: center;
+  display: block;
+}
+
+
+#new-task-create{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display:none;
+}
+
+.modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  border-radius: 10px;
+  width: 450px;
+  height: auto;
+  text-align: center;
+}
