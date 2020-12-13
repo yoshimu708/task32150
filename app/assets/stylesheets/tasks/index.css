@@ -20,7 +20,7 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 100;
-  display:none;
+  display: none;
 }
 
 .modal {
@@ -28,9 +28,25 @@
   top: 20%;
   left: 34%;
   background-color: #e6ecf0;
-  padding: 20px 0 40px;
+  padding: 40px 0 40px;
   border-radius: 10px;
   width: 450px;
-  height: auto;
+  height: 50%;
   text-align: center;
+}
+.close-btn{
+  border:1px solid black;
+  text-align: right;
+  margin-left:88%;
+  cursor: pointer;
+  display: block;
+}
+.form-input{
+  height:35vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-form-list{
+  margin-top:10%;
 }
