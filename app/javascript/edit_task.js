@@ -1,5 +1,5 @@
 $(function(){
-  $("#task-edit-btn").click(function(){
+  $(".task-edit-btn").click(function(){
     $("#edit-task").fadeIn();
   });
 

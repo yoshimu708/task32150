@@ -62,7 +62,7 @@
   margin-top:10%;
 }
 
-#task-edit-btn{
+.task-edit-btn{
   cursor: pointer;
   display: block;
 }
