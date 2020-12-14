@@ -4,7 +4,6 @@ $(function(){
   });
 
   $(".close-btn").click(function(){
-    $("#task-create-btn").fadeOut();
     $("#new-task-create").fadeOut();
   });
 });

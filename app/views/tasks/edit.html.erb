@@ -1,0 +1,22 @@
+<div id="edit-task">
+  <div class="modal">
+  <div class="close-btn">閉じる</div>
+<%= form_with model: @task, class: 'task-form', local: true do |f| %>
+  <div class="form-input">
+    <div class="task-form-list">
+    <%= f.label :task_name %><br>
+    <%= f.text_field :task_name, class: 'form-task-name', placeholder: 'type a task name' %>
+    </div>
+    <div class="task-form-list">
+    <%= f.label :state %><br>
+    <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
+    </div>
+    <div class="task-form-list">
+    <%= f.label :limit_time %><br>
+   <%=f.date_field  :limit, class:'form-limit'%>
+   </div>
+  </div>
+  <%= f.submit '送信', class: 'form-submit' %>
+<% end %>
+</div>
+</div>

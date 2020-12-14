@@ -16,6 +16,25 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+    if @task.update(task_params)
+      redirect_to room_tasks_path(@task.room_id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+   @task = Task.find(params[:id])
+   @task.destroy
+   redirect_to room_tasks_path(@task.room_id)
+  end
+
   private
 
   def task_params
