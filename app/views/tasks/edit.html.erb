@@ -1,7 +1,7 @@
 <div id="edit-task">
   <div class="modal">
   <div class="close-btn">閉じる</div>
-<%= form_with model: [@room, @task], class: 'task-form', local: true do |f| %>
+<%= form_with model: @task, class: 'task-form', local: true do |f| %>
   <div class="form-input">
     <div class="task-form-list">
     <%= f.label :task_name %><br>

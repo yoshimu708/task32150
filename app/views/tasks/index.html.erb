@@ -50,6 +50,9 @@
 
 
 
+
+
+
   <div class="my-tasks">
   <div class="task-bar">
        <div class="task-bar-info">
@@ -83,7 +86,7 @@
           <div class="task-management">
           <ul class="task-edit-destroy">
            <li>
-           <%#= link_to '編集', edit_room_task_path(), method: :get %>
+           <%= link_to '編集', edit_task_path(task), method: :get %>
 
            <!--<div class="edit-destroy task-edit-btn">編集</div>-->
            </li>
