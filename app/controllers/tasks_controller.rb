@@ -3,7 +3,6 @@ class TasksController < ApplicationController
     @task = Task.new
     @room = Room.find(params[:room_id])
     @tasks = @room.tasks.includes(:user)
-    
   end
 
   def create
@@ -18,13 +17,16 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
   end
 
   def destroy
+   @task = Task.find(params[:id])
+   @task.destroy
+   redirect_to room_tasks_path(@task.room_id)
+  
   end
 
   private
