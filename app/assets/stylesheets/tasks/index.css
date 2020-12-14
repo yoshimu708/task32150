@@ -23,6 +23,17 @@
   display: none;
 }
 
+#edit-task{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  display: none;
+}
+
 .modal {
   position: absolute;
   top: 20%;
@@ -49,4 +60,19 @@
 
 .task-form-list{
   margin-top:10%;
+}
+
+#task-edit-btn{
+  cursor: pointer;
+  display: block;
+}
+
+.task-edit-destroy{
+  list-style: none;
+  display: flex;
+}
+
+.edit-destroy{
+  border:1px solid black;
+  margin-left:5px;
 }
