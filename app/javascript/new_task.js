@@ -1,3 +1,4 @@
+document.addEventListener("turbolinks:load", function() {
 $(function(){
   $("#task-create-btn").click(function(){
     $("#new-task-create").fadeIn();
@@ -7,4 +8,4 @@ $(function(){
     $("#new-task-create").fadeOut();
   });
 });
-
+})

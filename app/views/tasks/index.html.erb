@@ -45,6 +45,7 @@
     
     </div>
     <div class="task-form-list">
+    
     <%= f.label :state %><br>
     <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
     </div>
@@ -81,10 +82,22 @@
 <ul class="tasks">
       <% @tasks.each do |task| %>
      <li class="task">
-        <div class="task-info">
-          <div class="tasks-infomation status">
+     <%if task.status=="todo"%>
+      <div class="task-info">
+          <div class="tasks-infomation red">
           <%= task.status%>
           </div>
+    <%elsif task.status=="doing"%>
+     <div class="task-info">
+          <div class="tasks-infomation green">
+          <%= task.status%>
+          </div>
+    <%else %>
+     <div class="task-info">
+          <div class="tasks-infomation blue">
+          <%= task.status%>
+          </div>
+    <%end%>
           <div class="tasks-infomation limit">
           <%= task.limit%>
           </div>          
