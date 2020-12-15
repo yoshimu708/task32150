@@ -74,8 +74,17 @@
   padding:3px;
 }
 
+.red{
+  background-color: mediumvioletred;
+}
+.blue{
+  background-color: lightblue;
+}
+.green{
+  background-color: lightgreen;
+}
 .status{
-  background-color: greenyellow;
+
   font-size: 10px;
 }
 
