@@ -47,7 +47,9 @@
   width:50%;
   height:100%;
   background-color: #DDDDDD;
-
+}
+.task-selector:hover{
+  background-color:lightskyblue;
 }
 .chat-selector{
   border:1px solid black;
@@ -56,7 +58,9 @@
   background-color: #DDDDDD;
 
 }
-
+.chat-selector:hover{
+  background-color:lightskyblue;
+}
 .messages-position{
   border:1px solid black;
   width:100%;

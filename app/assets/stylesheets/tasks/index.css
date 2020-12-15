@@ -17,6 +17,10 @@
   display: block;
 }
 
+.create-btn:hover{
+  background-color: lightskyblue;
+}
+
 
 #new-task-create{
   position: fixed;
@@ -50,6 +54,7 @@
   height: 50%;
   text-align: center;
 }
+
 .close-btn{
   border:1px solid black;
   text-align: right;
