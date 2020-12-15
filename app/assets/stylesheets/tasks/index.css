@@ -1,4 +1,10 @@
 
+.room-delete-btn{
+  border:1px solid black;
+  color:red;
+  background-color: lightgrey;
+}
+
 .create-btn{
   margin-top:0;
   width:30%;
@@ -57,21 +63,43 @@
   flex-direction: column;
 }
 
+.tasks-infomation{
+  margin-left:6vw;
+  margin-bottom:0;
+  padding:3px;
+}
+
+.status{
+  background-color: greenyellow;
+  font-size: 10px;
+}
+
+.limit{
+  color:red;
+}
+
 .task-form-list{
   margin-top:10%;
 }
 
-.task-edit-btn{
-  cursor: pointer;
-  display: block;
+.manage{
 }
 
-.task-edit-destroy{
-  list-style: none;
-  display: flex;
+.edit-btn{
+  border:1px solid black;
+  text-decoration: none;
+  padding:2px;
 }
+
+.destroy-btn{
+  border:1px solid black;
+  text-decoration: none;
+  padding:2px;}
 
 .edit-destroy{
   border:1px solid black;
-  margin-left:5px;
+}
+
+.tasks{
+  overflow: scroll;
 }

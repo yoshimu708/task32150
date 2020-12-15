@@ -11,6 +11,14 @@
   height:88vh;
 }
 
+.side-bar-main{
+  border:1px solid black;
+  background-color: #DDDDDD;
+  margin-top:10px;
+  height: 93%;
+  padding:5px;
+}
+
 .side-bar{
   width: 20%;
   height: 88vh;
@@ -28,13 +36,7 @@
   margin:10px;
 }
 
-.side-bar-main{
-  border:1px solid black;
-  background-color: #DDDDDD;
-  margin-top:10px;
-  height: 93%;
-  padding:5px;
-}
+
 
 .rooms{
   height:95%;
@@ -96,14 +98,12 @@
 }
 
 .my-tasks{
-  border:1px solid black;
   width:90%;
   height:70%;
   margin:0 auto;
 }
 
 .task-bar{
-  border:1px solid black;
   width:100%;
   height:8%;
 }
@@ -115,14 +115,14 @@
 }
 
 .tasks{
-  border:1px solid black;
+
   width:100%;
-  height:90%;
+  height:80%;
 }
 .task{
-  border:1px solid black;
+  border-bottom:1px solid black;
   width:100%;
-  height:10%;
+  height:5vh;
   margin-bottom:10px;
 }
 .task-info{
@@ -130,32 +130,14 @@
   list-style:none;
   margin-top:5px;
 }
-.task-status{
-  border:1px solid black;
+.tasks-info{
   height:40px;
   width:15%;
+  margin-left: 4vw;
 }
-
-.task-time{
-  border:1px solid black;
-  height:40px;
-  width:15%;
-  margin-left: 5px;
+.tasks-info p{
+  text-decoration: underline;
 }
-.task-title{
-  border:1px solid black;
-  height:40px;
-  width:40%;
-  margin-left: 5px;
-
-}
-.task-management{
-  border:1px solid black;
-  width:25%;
-  margin-left: 5px;
-
-}
-
 
 
 
@@ -165,34 +147,18 @@
 .field_with_errors {
   display: contents;
 }
-.form {
-  background-color: #DDDDDD;
-  height: 90px;
-  padding: 20px 40px;
-  display: flex;
+.form-position{
+  border:1px solid black;
+
 }
 
-.form-input {
-  background-color: white;
-  display: flex;
-  width: 100%;
-}
+
 
 .form-message {
   border: none;
   height: 50px;
   width: 100%;
   padding-left: 10px;
-}
-
-.form-submit {
-  background-color: #38AEF0;
-  border: none;
-  color: white;
-  font-size: 16px;
-  height: 50px;
-  margin-left: 15px;
-  padding: 0 20px;
 }
 
 .form-image {
@@ -204,6 +170,20 @@
   margin: 5px 10px;
   text-align: center;
 }
+
+
+.form-submit {
+  background-color: #38AEF0;
+  color: white;
+  font-size: 16px;
+  height: 50px;
+  margin-left: 15px;
+  padding: 0 20px;
+}
+
+
+
+
 
 .hidden {
   display: none;
