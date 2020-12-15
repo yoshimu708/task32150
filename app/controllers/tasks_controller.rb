@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   def index
     @task = Task.new
     @room = Room.find(params[:room_id])
-    @tasks = @room.tasks.includes(:user)
+    @tasks = @room.tasks.includes(:user).order(limit: "ASC")
   end
 
   def create
