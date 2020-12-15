@@ -98,6 +98,7 @@
 }
 
 .my-tasks{
+
   width:90%;
   height:70%;
   margin:0 auto;
@@ -204,4 +205,12 @@
 
 .field_with_errors {
   display: contents;
+}
+
+.app-task{
+  margin-top: 10vh;
+}
+
+.app-task li{
+  margin:10px 8vw ;
 }

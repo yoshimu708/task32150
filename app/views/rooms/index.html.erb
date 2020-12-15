@@ -18,8 +18,18 @@
   <div class="task-chat">
   <div class="main-title">
   <h2> YOUR TASK LIST</h2>
-  <input type="sumbmit" class="create-btn">
+  <div class="create-btn" id="task-create-btn">
+    new task
+    </div>
   </div>
+  <div class="task-chat-selector">
+   <div class="task-selector">
+   <%= link_to "task", "#",class:"selector" %>
+   </div>
+   <div class="chat-selector">
+   <%= link_to "chat", "#",class:"selector" %>
+   </div>
+   </div>
 
 
   <div class="my-tasks">
@@ -39,22 +49,40 @@
           </div>
         </div>
   </div>
+   
 
     <ul class="tasks">
      <li class="task">
-        <div class="task-info">
-          <div class="task-status">
+     <div class="task-info">
+          <div class="tasks-infomation green">
+          task-status
           </div>
-          <div class="task-time">
+          <div class="tasks-infomation limit">
+          task-limit
           </div>          
-          <div class="task-title">
+          <div class="tasks-infomation title">
+          task
           </div>
-          <div class="task-management">
+          <div class="tasks-infomation manege">
+              <%= link_to '編集', "#", method: :get, class:"edit-btn" %>
+            <%= link_to "削除","#", method: :delete,  class:"destroy-btn"%>
           </div>
         </div>
      </li>
-    </ul>
+
+     <ul class="app-task">
+     このアプリでできること
+     <li>ヘッダーの new roomボタンからルーム作成してユーザーで共有！</li>
+     <li>共有したいタスクを new taskボタンから投稿！</li>
+     <li>編集・消去ボタンを利用してタスク状況を管理！</li>
+     <li>chatボタンを押すとルーム内でのchatが可能！</li>
+     家族や仲間でタスクを共有していこう！
+     </ul>
+
+  
     
+    
+   
   </div> 
   </div>
   </div>
