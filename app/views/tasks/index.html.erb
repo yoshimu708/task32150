@@ -15,6 +15,7 @@
 
 
   <div class="main-task-chat">
+  
    <div class="task-chat">
     <div class="main-title">
   <h2> <%=@room.name%><br> TASK LIST</h2>
@@ -22,7 +23,15 @@
     new task
     </div>
   </div>
-
+<div class="task-chat-selector">
+   <div class="task-selector">
+   <%= link_to "task", room_tasks_path(@room),class:"selector" %>
+   </div>
+   <div class="chat-selector">
+   <%= link_to "chat", room_messages_path(@room),class:"selector" %>
+   </div>
+   </div>
+   
   <div id="new-task-create" >
   <div class="modal">
   <div class="close-btn">閉じる</div>

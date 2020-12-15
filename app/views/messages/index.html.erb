@@ -29,10 +29,10 @@
 
    <div class="task-chat-selector">
    <div class="task-selector">
-   task
+   <%= link_to "task", room_tasks_path(@room),class:"selector" %>
    </div>
    <div class="chat-selector">
-   chat
+   <%= link_to "chat", room_messages_path(@room),class:"selector" %>
    </div>
    </div>
 
