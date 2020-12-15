@@ -11,24 +11,36 @@
   border: 1px solid black;
   width:25vw;
   height:8vh;
+  position:relative;
   padding:5px;
 }
-.header-logo-potion{
-  margin: 0 1vw ;
-  width:23vw;
-  height:7vh;
+
+.header-title{
+  border: 1px solid black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height:100%;
+  width: 100%;
+  text-decoration: none;
+  color:black;
+  text-align: center;
+  padding-top:20px;
+}
+
+.header-title:hover{
+  background-color: lightsteelblue;
 }
 
 .header-user-menu{
+  border: 1px solid black;
   width:70vw;
   height:8vh;
   margin-left: 10px;
 }
-.user-menus{
-  margin-top:33px;
-  margin-bottom:0;
-}
+
 .menus{
+  margin-top: 4vh;
   list-style: none;
   display: flex;
   margin-left:10px;
@@ -38,6 +50,10 @@
   padding: 5px 10px;
   text-decoration:none;
   margin-left:3px;
+}
+.menu:hover{
+  background-color: lightsteelblue;
+
 }
 .link{
   border-radius: 8%;

@@ -1,0 +1,30 @@
+.top-task-selector{
+  display: flex;
+  justify-content: space-around;
+}
+#top-btn{
+  border:1px solid black;
+  text-decoration:none;
+  color:black;
+  margin-right:5px;
+  display:block;
+  height:5%;
+  width:20vw;
+}
+
+#top-btn:hover{
+  background-color: lightsteelblue;
+}
+
+#task-btn{
+  border:1px solid black;
+  text-decoration:none;
+  color:black;
+  display:block;
+  height:5%;
+  width:20vw;
+}
+
+#task-btn:hover{
+  background-color: lightsteelblue;
+}

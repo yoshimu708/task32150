@@ -22,17 +22,15 @@
       <%= @room.name %>
       </div>
     </div>
-  <div class="right-header">
-      <%= link_to "ROOM DELETE", room_path(@room), method: :delete,class:"room-delete" %>
-  </div>
+    <%= link_to "ROOM DELETE", room_path(@room), method: :delete,class:"room-delete-btn" %>
   </div>
 
    <div class="task-chat-selector">
    <div class="task-selector">
-   task
+   <%= link_to "task", room_tasks_path(@room),class:"selector" %>
    </div>
    <div class="chat-selector">
-   chat
+   <%= link_to "chat", room_messages_path(@room),class:"selector" %>
    </div>
    </div>
 
@@ -41,15 +39,15 @@
   <%= render "shared/main_chat" %>
   </div>
   
+
   <div class="form-position">
   <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>
-  <div class="form-input">
     <%= f.text_field :content, class: 'form-message', placeholder: 'type a message' %>
     <label class="form-image">
       <span class="image-file">画像</span>
       <%= f.file_field :image, class: 'hidden' %>
     </label>
-  </div>
+  
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>
 </div>

@@ -1,12 +1,11 @@
-<div class='account-page' id='account-page'>
-  <div class='account-page__inner clearfix'>
-    <div class='account-page__inner--left account-page__header'>
+ <div class="user-edit" >
+<%= render "shared/second_header" %>
+  <div id="edit-task">
+  <div class="modal">
       <h2>Edit Account</h2>
       <h5>アカウントの編集</h5>
-      <%= link_to "チャットページに戻る", :back, class: 'btn'%>
-    </div>
-    <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, local: true do |f|%>
+      <%= link_to "TOPページに戻る", "/", class: 'btn'%>
+   <%= form_with model: current_user, local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :nickname%>
@@ -27,6 +26,7 @@
           <%= f.submit "Update", class: 'btn'%>
         </div>
       <% end %>
-    </div>
-  </div>
+</div>
+
+</div>
 </div>

@@ -15,14 +15,25 @@
 
 
   <div class="main-task-chat">
+
    <div class="task-chat">
+    <%= link_to "ROOM DELETE", room_path(@room), method: :delete,class:"room-delete-btn" %>
+
     <div class="main-title">
   <h2> <%=@room.name%><br> TASK LIST</h2>
     <div class="create-btn" id="task-create-btn">
     new task
     </div>
   </div>
-
+<div class="task-chat-selector">
+   <div class="task-selector">
+   <%= link_to "task", room_tasks_path(@room),class:"selector" %>
+   </div>
+   <div class="chat-selector">
+   <%= link_to "chat", room_messages_path(@room),class:"selector" %>
+   </div>
+   </div>
+   
   <div id="new-task-create" >
   <div class="modal">
   <div class="close-btn">閉じる</div>
@@ -48,52 +59,41 @@
 </div>
 
 
-
-
-
-
-
   <div class="my-tasks">
   <div class="task-bar">
-       <div class="task-bar-info">
-          <div class="task-status">
-          status
+         <div class="task-bar-info">
+          <div class="tasks-info">
+          <p>status</p>
           </div>
-          <div class="task-time">
-          limit
+          <div class="tasks-info">
+          <p>limit</p>
           </div>          
-          <div class="task-title">
-          title
+          <div class="tasks-info">
+          <p>title</p>
           </div>
-          <div class="task-management">
-          manegement
+          <div class="tasks-info">
+          <p>manege</p>
           </div>
         </div>
   </div>
+
+
 <ul class="tasks">
       <% @tasks.each do |task| %>
      <li class="task">
         <div class="task-info">
-          <div class="task-status">
+          <div class="tasks-infomation status">
           <%= task.status%>
           </div>
-          <div class="task-time">
+          <div class="tasks-infomation limit">
           <%= task.limit%>
           </div>          
-          <div class="task-title">
+          <div class="tasks-infomation title">
           <%= task.task_name%>
           </div>
-          <div class="task-management">
-          <ul class="task-edit-destroy">
-           <li>
-           <%= link_to '編集', edit_task_path(task), method: :get %>
-
-           <!--<div class="edit-destroy task-edit-btn">編集</div>-->
-           </li>
-           <!--<li><div class="edit-destroy">消去</div></li>-->
-            <%= link_to "削除", task_path(task), method: :delete %>
-
-          </ul>
+          <div class="tasks-infomation manege">
+           <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %>
+            <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%>
           </div>
         </div>
      </li>
