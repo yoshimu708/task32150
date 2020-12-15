@@ -1,5 +1,11 @@
+<%= render "shared/second_header" %>
+
 <div id="edit-task">
   <div class="modal">
+    <div class="top-task-selector">
+     <%= link_to "TOPページに戻る", "/", class: 'btn' ,id:"top-btn"%>
+      <%= link_to "taskページに戻る", room_tasks_path(@room),class:"selector",id:"task-btn" %>
+    </div>
 <%= form_with model: @task, class: 'task-form', local: true do |f| %>
   <div class="form-input">
     <div class="task-form-list">

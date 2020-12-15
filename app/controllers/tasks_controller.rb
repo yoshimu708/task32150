@@ -18,6 +18,7 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+    @room = @task.room_id
   end
 
   def update
