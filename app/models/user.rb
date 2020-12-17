@@ -9,5 +9,7 @@ class User < ApplicationRecord
   has_many :messages
   has_many :tasks
 
-  validates :nickname, presence: true
+  validates :nickname, presence: true, uniqueness: true,length: { maximum: 15 } 
+
+  validates :password,length: { minimum: 6 } 
 end
