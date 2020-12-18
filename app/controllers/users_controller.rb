@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    favorites = Favorite.where(user_id: current_user.id).pluck(:task_id) 
     @favorite_list = Task.find(favorites)
   end
 
