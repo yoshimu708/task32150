@@ -1,18 +1,17 @@
 class FavoritesController < ApplicationController
-  before_action :favorite_task
   before_action :authenticate_user! 
 
   def create
       @favorite = Favorite.create(user_id: current_user.id, task_id: @task.id)
+      redirect_to room_tasks_path(@task.room_id)
   end
 
   def destroy
+    @task = Task.find(params[:id])
     @favorite = Favorite.find_by(user_id: current_user.id, task_id: @task.id)
     @favorite.destroy
+    redirect_to root_path
   end
+  
 
-  private
-  def favorite_task
-    @task = Task.find(params[:task_id])
-  end
 end

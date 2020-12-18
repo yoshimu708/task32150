@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @favorite_list = Task.find(favorites)
+  end
+
   private
 
   def user_params
