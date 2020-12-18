@@ -11,6 +11,4 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy     
 
   validates :nickname, presence: true, uniqueness: true,length: { maximum: 15 } 
-
-  validates :password,length: { minimum: 6 } 
 end
