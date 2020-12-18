@@ -1,0 +1,70 @@
+<div class="page">
+<%= render "shared/header" %>
+
+
+<div class="main">
+  <div class="side-bar">
+  <div class="side-bar-title">
+  <h4 class="side-bar-text">ROOM</h4>
+  </div>
+
+  <div class="side-bar-main">
+    <%= render "messages/side_bar" %>
+  </div>
+  </div>
+
+
+
+
+   <div class="main-task-chat">
+  <div class="task-chat">
+  <div class="main-title">
+  <h2> TASK DETAILS </h2>
+  <div class="detail-menus">
+  <%= link_to '編集', edit_task_path(@task), method: :get, class:"detail-edit-btn" %>
+  <%= link_to "taskページに戻る", room_tasks_path(@room),class:"selector",class:"detail-task-btn" %>
+  <%= link_to "削除", task_path(@task), method: :delete,  class:"detail-destroy-btn"%>
+  <% if !Favorite.exists?(user: current_user, task_id: @task.id)   %>
+      <%= link_to "mytask",task_favorites_path(@task), method: :post ,class:"detail-favorite-btn"   %>
+   <% end %>
+  </div>
+  </div>
+
+ <div class="task-details">
+<table class="task-table">
+<tbody>
+<tr>
+<td class="left">task name</td>
+<td class="right"><%=@task.task_name%></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">room name</td>
+<td class="right"><%=@room_info.name%></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">status</td>
+<td class="right"><%=@task.status%></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left">limit</td>
+<td class="right"><%=@task.limit%></td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="left-detail">details</td>
+<td class="right-detail"><%#=@task.details%></td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+ 

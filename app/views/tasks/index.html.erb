@@ -105,6 +105,7 @@
           <%= task.task_name%>
           </div>
           <div class="tasks-infomation manege">
+              <%= link_to '詳細', task_path(task), method: :get, class:"edit-btn" %>
            <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %>
             <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%>
               <% if !Favorite.exists?(user: current_user, task_id: task.id)   %>

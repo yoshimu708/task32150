@@ -1,0 +1,39 @@
+table{
+  border:1px solid black;
+}
+
+
+td{
+  border:1px solid black;
+}
+
+.task-details{
+  width:100%;
+  height:70%;
+  padding: 0 5%;
+}
+.task-table{
+  width:100%;
+  height:100%;
+}
+
+
+.left{
+  width:20%;
+  height:5vh;
+}
+
+.right{
+  width:80%;
+  height:5vh;
+}
+
+.left-details{
+  width:20%;
+  height:15vh;
+}
+
+.right-detail{
+  width:80%;
+  height:40vh;
+}

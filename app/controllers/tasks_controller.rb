@@ -36,6 +36,12 @@ class TasksController < ApplicationController
    redirect_to room_tasks_path(@task.room_id)
   end
 
+  def show
+    @task = Task.find(params[:id])
+    @room = @task.room_id
+    @room_info = Room.find(@room)
+  end
+
   private
 
   def task_params
