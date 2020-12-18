@@ -107,13 +107,27 @@
           <div class="tasks-infomation manege">
            <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %>
             <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%>
+              <% if !Favorite.exists?(user: current_user, task_id: task.id)   %>
+                <%= link_to task_favorites_path(task), method: :post, remote: true, class: "favorite-btn favorite-post" do %>
+                  <div class="i far fa-thumbs-up">
+                    <span>⭐︎</span>
+                    <%= task.favorites.length    %>
+                  </div>
+                <% end %>
+              <% else %>
+                <%= link_to task_favorites_path(task), method: :delete, remote: true, class: "favorite-btn favorite-delete" do %>
+                  <div class="i far fa-thumbs-up">
+                    <span>⭐︎</span>
+                    <%= task.favorites.length  %>
+                  </div>
+                <% end %>
+              <% end %>
           </div>
         </div>
      </li>
 <%end%>
 </ul>
     <div>
-
 
     </div>
   </div> 
