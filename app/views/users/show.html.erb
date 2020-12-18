@@ -15,50 +15,13 @@
 
 
   <div class="main-task-chat">
-
-   <div class="task-chat">
-    <%= link_to "ROOM DELETE", room_path(@room), method: :delete,class:"room-delete-btn" %>
-
-    <div class="main-title">
-  <h2> <%=@room.name%><br> TASK LIST</h2>
-    <div class="create-btn" id="task-create-btn">
-    new task
+  <div class="task-chat">
+  <div class="main-title">
+  <h2> YOUR TASK LIST</h2>
+  <div class="create-btn" id="task-create-btn">
+    TASKS
     </div>
   </div>
-<div class="task-chat-selector">
-   <div class="task-selector">
-   <%= link_to "task", room_tasks_path(@room),class:"selector" %>
-   </div>
-   <div class="chat-selector">
-   <%= link_to "chat", room_messages_path(@room),class:"selector" %>
-   </div>
-   </div>
-   
-  <div id="new-task-create" >
-  <div class="modal">
-  <div class="close-btn">閉じる</div>
-<%= form_with model: [@room, @task], class: 'task-form', local: true do |f| %>
-  <div class="form-input">
-    <div class="task-form-list">
-    <%= f.label :task_name %><br>
-    <%= f.text_field :task_name, class: 'form-task-name', placeholder: 'type a task name' %>
-    
-    </div>
-    <div class="task-form-list">
-    
-    <%= f.label :state %><br>
-    <%= f.select(:status, [['todo', 'todo'], ['doing', 'doing'], ['done', 'done']]) %>
-    </div>
-    <div class="task-form-list">
-    <%= f.label :limit_time %><br>
-   <%=f.date_field  :limit, class:'form-limit'%>
-   </div>
-  </div>
-  <%= f.submit '送信', class: 'form-submit' %>
-<% end %>
-</div>
-</div>
-
 
   <div class="my-tasks">
   <div class="task-bar">
@@ -78,9 +41,10 @@
         </div>
   </div>
 
-
 <ul class="tasks">
-      <% @tasks.each do |task| %>
+      <% if @favorite_list.present? %>
+         <% @favorite_list.each do |task| %>
+
      <li class="task">
      <%if task.status=="todo"%>
       <div class="task-info">
@@ -107,12 +71,17 @@
           <div class="tasks-infomation manege">
            <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %>
             <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%>
-              <% if !Favorite.exists?(user: current_user, task_id: task.id)   %>
-                <%= link_to "mytask",task_favorites_path(task), method: :post ,class:"favorite-btn"   %>
+              <% if Favorite.exists?(user: current_user, task_id: task.id)   %>
+                <%= link_to favorite_path(task), method: :delete, class: "favorite-delete" do %>
+                  <div class="i far fa-thumbs-up">
+                    <span>roomに戻す</span>
+                   </div>
+                <% end %>
               <% end %>
           </div>
         </div>
      </li>
+     <%end%>
 <%end%>
 </ul>
     <div>
