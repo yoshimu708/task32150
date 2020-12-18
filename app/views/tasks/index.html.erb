@@ -53,6 +53,11 @@
     <%= f.label :limit_time %><br>
    <%=f.date_field  :limit, class:'form-limit'%>
    </div>
+   <div class="task-form-list">
+    <%= f.label :task_details %><br>
+   <%=f.text_area :details, size:"50*50",class:'form-limit'%>
+   </div>
+
   </div>
   <%= f.submit '送信', class: 'form-submit' %>
 <% end %>

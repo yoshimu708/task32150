@@ -51,7 +51,7 @@
   padding: 40px 0 40px;
   border-radius: 10px;
   width: 450px;
-  height: 50%;
+  height: 70%;
   text-align: center;
 }
 
@@ -63,7 +63,7 @@
   display: block;
 }
 .form-input{
-  height:35vh;
+  height:50vh;
   display: flex;
   flex-direction: column;
 }

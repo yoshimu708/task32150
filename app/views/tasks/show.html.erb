@@ -21,11 +21,11 @@
   <div class="main-title">
   <h2> TASK DETAILS </h2>
   <div class="detail-menus">
-  <%= link_to '編集', edit_task_path(@task), method: :get, class:"detail-edit-btn" %>
-  <%= link_to "taskページに戻る", room_tasks_path(@room),class:"selector",class:"detail-task-btn" %>
-  <%= link_to "削除", task_path(@task), method: :delete,  class:"detail-destroy-btn"%>
+  <%= link_to '編集', edit_task_path(@task), method: :get, class:"detail-edit-btn btn" %>
+  <%= link_to "taskページに戻る", room_tasks_path(@room),class:"selector",class:"detail-task-btn btn" %>
+  <%= link_to "削除", task_path(@task), method: :delete,  class:"detail-destroy-btn btn"%>
   <% if !Favorite.exists?(user: current_user, task_id: @task.id)   %>
-      <%= link_to "mytask",task_favorites_path(@task), method: :post ,class:"detail-favorite-btn"   %>
+      <%= link_to "mytask",task_favorites_path(@task), method: :post ,class:"detail-favorite-btn btn"   %>
    <% end %>
   </div>
   </div>
@@ -59,7 +59,7 @@
 <tbody>
 <tr>
 <td class="left-detail">details</td>
-<td class="right-detail"><%#=@task.details%></td>
+<td class="right-detail"><%=@task.details%></td>
 </tr>
 </tbody>
 </table>

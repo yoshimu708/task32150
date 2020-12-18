@@ -45,6 +45,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:status,:limit,:task_name).merge(user_id: current_user.id)
+    params.require(:task).permit(:status,:limit,:task_name,:details).merge(user_id: current_user.id)
   end
 end
