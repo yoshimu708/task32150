@@ -1,24 +1,173 @@
-# README
+# アプリケーション名
+Task To Manage
+# アプリケーション概要
+複数人が所属するコミュニティでのタスク共有管理ができるアプリケーションです
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+タスク共有したいメンバーでルームを作成し、タスクを管理できます。
+またルーム内では、チャットを利用し、コミュニケーションをとることが可能です。
 
-Things you may want to cover:
+# デプロイURL
+ Heroku  
+ https://task32150.herokuapp.com/
 
-* Ruby version
 
-* System dependencies
+# テスト用アカウント
+テスト用アカウント  
 
-* Configuration
+| nickname       | email               | password    |
+| -------------  | -----------------  | ------------ | 
+| 708            | test@com             | 123abc    |
 
-* Database creation
+# 利用方法
+①ヘッダーのルーム作成ボタンからルーム作成ページへ遷移し、タスクの共有管理を行うメンバーを選択し、ルームを作成します。  
+②作成したルームを選択し、共有タスクを投稿します。  
+③タスクに進捗状況によって編集・消去・マイタスクに登録を行うことができます。  
+④状況報告や質問などユーザー間のコミュニケーションはルーム内のチャットページにで行うことができます。
 
-* Database initialization
+# 目指した課題解決
+家族や友人、職場など複数人でのタスクがある場合にどうしても進捗状況の確認やタスクの整理、報告などが手間がかかってしまいます。
+このアプリケーションを利用することでそれらの手間を省き、共有管理を簡易化することを目指し、作成しました。
 
-* How to run the test suite
+# 洗い出した用件
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+| 機能            | 目的               | 詳細     |ストーリー（ユースケース）｜
+| -------------  | -----------------  | ----------- | -----------------|
+| ユーザー管理機能  | ユーザーの判別・管理  | 新規登録・ログイン・ログアウト・編集機能	|新規登録ボタンでフォーム記入後、登録ボタンを押すことで新規登録ができる。ログインページからemailとpasswordを入力することでログインできる。ヘッダのログアウトボタンからログアウトできる。ヘッダーのユーザー編集からユーザー情報の編集をすることができる| 
+| 画像投稿機能 | チャットにおける画像投稿 | チャット画面でフォームから画像投稿ができる|チャット画面においてフォームの画像ボタンから画像選択を行い、メッセージとして投稿することができる| 
+| タスク投稿機能 | 	共有タスクの管理 | ルームでのタスク投稿 |ルーム選択からタスク画面に移動し、タスク投稿ができる	roomを選択するとタスクページに遷移する。createボタンからモーダルによってタスクを投稿することができる。項目はtask_name,status,limit,detailsの４つを登録できる|
+| タスク消去機能 | 不必要タスクの管理 | ルームで投稿したタスクを消去することができる |投稿したタスクを各タスクに存在する削除ボタンにより消去することができる| 
+| タスク編集機能 | 投稿タスクの編集 | 投稿したタスクに進捗や変更があった場合の編集|ルーム選択からタスクに移動し、各タスクにある編集ボタンを押すことでタスク編集ページへ移動する。そこで修正内容を変更し、更新することができる|
+| タスク一覧表示機能 | 共有タスクの可視化 | ルームのメンバーが投稿したタスクの一覧がタスク画面に表示される |タスクページにおいて投稿されたタスクがlimit順に表示される。task_nameとstatusも確認できる。| 
+| ルーム作成機能 | 共有するグループを作成する |  タスクとチャットを管理するルームの作成|ヘッダーのnew roomボタンからルームに入れたいメンバーを選択してルーム作成することができる|
+| ルーム消去機能 | タスク完了時や不必要なグループの消去 | タスクとチャットを管理するルームの消去 |タスクページ・チャットページにあるroom deleteボタンによってルームの消去をすることができる| 
+| ルーム一覧機能 | ユーザーが参加するルームの一覧の可視化 | タスクとチャットを管理するルームの一覧を表示する|サイドバーに自分が参加するルームの一覧が表示される|
+|お気に入り機能| マイタスクとして扱いたい際の情報取得 | タスクをお気に入り登録してマイページで表示 |タスクのmanegeカラムでお気に入り登録をしてマイページで表示する	ルームにあるタスクをmy taskボタンによってトップページに追加することができる。マイページに表示する事によって自分が行うタスクを管理しやすくする。| 
+| お気に入り消去機能 | マイタスクとして完了した際や他のユーザーが担当する際の表示の変更| 	タスク登録のボタンでお気に入り登録を消去する	 |roomに戻すボタンでトップページの表示をなくすことができる|
+| ルーム招待機能 | 特定ユーザーをルーム作成後に追加する | メンバーに変更があった時に作成したルームに新しいユーザーを追加することができる |作成したルームの中の招待ボタンから追加でユーザーを招待することができる。| 
+| ルーム退会機能 | 特定ユーザーがルーム作成後に退会する | メンバーに変更があったときに作成したルームからユーザーが退出することができる |作成したルームの中の退出ボタンにより、ルームから退会することができる|
+| 友達登録機能 | よく関わるユーザーの判別 | 再度グループになる可能性があるユーザーを登録しておくことができる | ユーザーの情報が記述されたページから友達登録ができる| 
+| 友達登録消去機能 | よく関わるユーザーの判別 | 環境が変わり、関わることの少なくなったユーザーなどを登録から消去することができる |友達一覧ページから友達登録を消去することができる| 
+| 通知機能 | 更新の通知 |新規のタスクが投稿された時やチャット更新時の通知 |ルームに更新があった際に通知がある	ルーム内でのタスク・チャット投稿があった場合に通知を消磁する|
+| 複数画像投稿機能 | コミュニケーションの向上 | 詳しく情報を知りたい場合やデータで状況を確認したい場合に複数の画像を投稿できる |チャット画面のフォームから画像選択を複数して送信ボタンで投稿できる| 
+| 既読機能 | 他のユーザーの状況確認 | ユーザーが自ら投稿したチャットの閲覧数が確認できる |投稿したチャットの読んだユーザー数を表示する| 
 
-* ...
+
+# 実装した機能について
+・ユーザー管理機能  
+・チャット投稿機能  
+・チャット一覧表示機能  
+・画像投稿機能  
+・チャット消去機能  
+・タスク投稿機能  
+・タスク消去機能  
+・タスク編集機能  
+・タスク一覧表示機能  
+・ルーム作成機能  
+・ルーム消去機能  
+・ルーム一覧表示機能  
+・お気に入り登録機能  
+・お気に入り消去機能
+
+# 実装予定の機能
+・ルーム招待機能  
+・ルーム退会機能  
+・友達登録機能  
+・友達登録消去機能  
+・通知機能  
+・複数画像投稿機能  
+・既読機能
+# ローカルでの動作方法
+rails _6.0.0_  
+mysql 5.6.47  
+gem 'devise'  
+gem 'pry-rails'  
+gem 'mini_magick'  
+gem 'image_processing', '~> 1.2'  
+gem "jquery-rails"  
+
+# データベース設計
+ER図
+
+# テーブル設計
+
+## users テーブル
+
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
+
+### Association
+
+- has_many :room_users
+- has_many :rooms, through: room_users
+- has_many :messages
+- has_many :tasks
+- has_many :favorites, dependent: :destroy 
+
+## rooms テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- has_many :room_users
+- has_many :users, through: room_users
+- has_many :messages
+- has_many :tasks
+
+## room_users テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| room   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## messages テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| content | string     | null: false                    |
+| user    | references | null: false, foreign_key: true |
+| room    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+
+## tasks テーブル
+
+| Column    | Type       | Options                        |
+| --------- | ---------- |------------------------------- |
+| task_name | string     | null: false                    |
+| status    | string     | null: false                    |
+| limit     | string     | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| room      | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :user
+- has_many :favorites, dependent: :destroy 
+
+## fovorites テーブル
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| user    | references | null: false, foreign_key: true |
+| task    | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :room
+- belongs_to :task
