@@ -1,5 +1,5 @@
 FactoryBot.define do
-    factory :room do
-      name              {"test room"}
-    end
+  factory :room do
+    name {Faker::Team.name}
+  end
 end
