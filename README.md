@@ -87,7 +87,7 @@ gem 'image_processing', '~> 1.2'
 gem "jquery-rails"  
 
 # データベース設計
-ER図
+![](https://i.gyazo.com/2f3fe56e87add0ba5f435d5e87e7ee0a.png)
 
 # テーブル設計
 
