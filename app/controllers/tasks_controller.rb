@@ -42,6 +42,7 @@ class TasksController < ApplicationController
     @room_info = Room.find(@room)
   end
 
+  
   private
 
   def task_params
