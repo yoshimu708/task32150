@@ -21,7 +21,7 @@
  
   </div>
 
-  <div class="my-tasks">
+  <%# <div class="my-tasks"> %>
   <div class="task-bar">
          <div class="task-bar-info">
           <div class="tasks-info">
@@ -34,7 +34,7 @@
           <p>title</p>
           </div>
           <div class="tasks-info">
-          <p>manege</p>
+          <p>manage</p>
           </div>
         </div>
   </div>
@@ -42,7 +42,6 @@
 <ul class="tasks">
       <% if @favorite_list.present? %>
          <% @favorite_list.each do |task| %>
-
      <li class="task">
      <%if task.status=="todo"%>
       <div class="task-info">
@@ -82,7 +81,7 @@
      <%end%>
 <%end%>
 </ul>
-    <div>
+    
 
     </div>
   </div> 
