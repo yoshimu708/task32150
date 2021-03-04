@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @room = Room.find(params[:room_id])
     @task = @room.tasks.new(task_params)
     if @task.save
-      redirect_to room_tasks_path(@task.room_id)
+      redirect_to room_tasks_path(@room)
     else
       @tasks = @room.tasks.includes(:user)
       render :index
