@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2020_12_18_024900) do
     t.string "task_name", null: false
     t.string "status", null: false
     t.string "limit", null: false
-    t.text "details"
+    t.string "details"
     t.bigint "room_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
