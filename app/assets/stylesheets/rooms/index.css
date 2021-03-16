@@ -101,7 +101,6 @@
 }
 
 .my-tasks{
-
   width:90%;
   height:70%;
   margin:0 auto;
@@ -115,7 +114,24 @@
   display: flex;
   list-style:none;
   margin-top:5px;
-  margin-left:1%;
+  width:100%;
+}
+
+.task-status{
+  margin-left:25px;
+}
+
+.task-limit{
+  margin-left:50px;
+  width:50%;
+}
+
+.task-title{
+  margin-left:80px;
+}
+
+.task-manage{
+  margin-left:30vw;
 }
 
 .tasks{
@@ -125,6 +141,8 @@
   margin-block-end: 0em;
   list-style:none;
   overflow: scroll;
+  padding-left:0;
+  margin-left:10px;
 }
 .task{
   border-bottom:1px solid black;
@@ -136,21 +154,18 @@
   display: flex;
   list-style:none;
   margin-top:5px;
-  height:35px
+  height:35px;
 }
 .tasks-info{
-  height:40px;
-  width:15%;
-  margin-left: 4vw;
+  /* height:40px; */
+  /* width:15%; */
+  /* margin-left: 4vw; */
 }
+
+
 .tasks-info p{
   text-decoration: underline;
 }
-
-
-
-
-
 
 .field_with_errors {
   display: contents;
