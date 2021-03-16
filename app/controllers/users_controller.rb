@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   def edit
   end
 
+
   def update
     if current_user.update(user_params)
       redirect_to root_path
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
     favorites = Favorite.where(user_id: current_user.id).pluck(:task_id) 
     @favorite_list = Task.find(favorites)
   end
-
+  
   private
 
   def user_params

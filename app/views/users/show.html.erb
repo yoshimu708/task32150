@@ -45,17 +45,17 @@
      <li class="task">
      <%if task.status=="todo"%>
       <div class="task-info">
-          <div class="tasks-infomation red">
+          <div class="task-info-status red">
           <%= task.status%>
           </div>
     <%elsif task.status=="doing"%>
      <div class="task-info">
-          <div class="tasks-infomation green">
+          <div class="task-info-status green">
           <%= task.status%>
           </div>
     <%else %>
      <div class="task-info">
-          <div class="blue">
+          <div class="task-info-status blue">
           <%= task.status%>
           </div>
     <%end%>
@@ -71,7 +71,7 @@
            <li> <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%></li>
           <li> <% if Favorite.exists?(user: current_user, task_id: task.id)   %>
                 <%= link_to favorite_path(task), method: :delete, class: "favorite-delete" do %>
-           <div class="i far fa-thumbs-up">
+           <div class="i far fa-thumbs-up remove">
                     <span>roomに戻す</span>
                    </div></li>
                 <% end %>

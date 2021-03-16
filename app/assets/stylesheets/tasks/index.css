@@ -171,3 +171,7 @@
 .tasks{
   overflow: scroll;
 }
+
+.remove{
+  color:black;
+}
