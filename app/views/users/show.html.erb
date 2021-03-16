@@ -22,19 +22,19 @@
   </div>
 
   <%# <div class="my-tasks"> %>
-  <div class="task-bar">
+    <div class="task-bar">
          <div class="task-bar-info">
           <div class="tasks-info">
-          <p>status</p>
+          <p class="task-status">status</p>
           </div>
           <div class="tasks-info">
-          <p>limit</p>
+          <p class="task-limit">limit</p>
           </div>          
           <div class="tasks-info">
-          <p>title</p>
+          <p class="task-title">title</p>
           </div>
           <div class="tasks-info">
-          <p>manage</p>
+          <p class="task-manage">manage</p>
           </div>
         </div>
   </div>
@@ -55,24 +55,25 @@
           </div>
     <%else %>
      <div class="task-info">
-          <div class="tasks-infomation blue">
+          <div class="blue">
           <%= task.status%>
           </div>
     <%end%>
-          <div class="tasks-infomation limit">
+          <div class="limit">
           <%= task.limit%>
           </div>          
-          <div class="tasks-infomation title">
+          <div class="title">
           <%= task.task_name%>
           </div>
-          <div class="tasks-infomation manege">
-           <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %>
-            <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%>
-              <% if Favorite.exists?(user: current_user, task_id: task.id)   %>
+          <div class="manage">
+          <ul>
+          <li> <%= link_to '編集', edit_task_path(task), method: :get, class:"edit-btn" %></li>
+           <li> <%= link_to "削除", task_path(task), method: :delete,  class:"destroy-btn"%></li>
+          <li> <% if Favorite.exists?(user: current_user, task_id: task.id)   %>
                 <%= link_to favorite_path(task), method: :delete, class: "favorite-delete" do %>
-                  <div class="i far fa-thumbs-up">
+           <div class="i far fa-thumbs-up">
                     <span>roomに戻す</span>
-                   </div>
+                   </div></li>
                 <% end %>
               <% end %>
           </div>
